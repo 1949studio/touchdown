@@ -26,7 +26,7 @@ var gridLayout: [GridItem] {
     return Array(repeating: GridItem(.flexible(), spacing: rowSpacing, alignment: .top), count: 2)
 }
 // UX
-
+let feedback = UIImpactFeedbackGenerator(style: .medium)
 // API
 
 //

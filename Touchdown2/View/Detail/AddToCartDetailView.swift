@@ -12,7 +12,9 @@ struct AddToCartDetailView: View {
     @EnvironmentObject var shop : Shop
     //MARK: - BODY
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            feedback.impactOccurred()
+        }) {
             Spacer()
             Text("Add to cart".uppercased())
                 .font(.system(.title2, design: .rounded))
@@ -22,7 +24,10 @@ struct AddToCartDetailView: View {
         }
         .padding(15)
         .background(
-            Color(red: shop.selectedProduct?.red ?? sampleProducts.red, green: shop.selectedProduct?.green ?? sampleProducts.green, blue: shop.selectedProduct?.blue ?? sampleProducts.blue))
+            Color(
+                red: shop.selectedProduct?.red ?? sampleProducts.red,
+                green: shop.selectedProduct?.green ?? sampleProducts.green,
+                blue: shop.selectedProduct?.blue ?? sampleProducts.blue))
         .clipShape(Capsule())
     }
 }
